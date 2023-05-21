@@ -1,4 +1,3 @@
-unittest
 python-dotenv
 rich
 pytest
