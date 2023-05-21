@@ -1,10 +1,23 @@
-import unittest
 import stools
+import sys
+from io import StringIO
+from unittest.mock import patch
 
-class TestMain(unittest.TestCase):
-    def test_variable_set(self):
-        stools.variables.set('case', 'unittest')
-        self.assertTrue(stools.variables.get('case') == 'unittest', 'Error on variable get')
+def test_variable_set():
+    stools.variables.set('case', 'test')
+    assert stools.variables.get('case') == 'test', 'Failed to set or get var'
 
-if __name__ == '__main__':
-    unittest.main(__name__)
+def test_echo_var():
+    stream = StringIO()
+    with patch('sys.stdout', stream):
+        stools.echo('Testing with ($tool)', tool='PyTest')
+    tc1 = stream
+    del stream
+    stream = StringIO()
+    stools.variables.set('TEST_TOOL', 'PyTest')
+    with patch('sys.stdout', stream):
+        stools.echo('Testing with ($TEST_TOOL)')
+    tc2 = stream
+    del stream
+    
+    assert tc1 == tc2
