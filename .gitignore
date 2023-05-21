@@ -5,3 +5,7 @@ __pycache__/*
 *.env
 *.db
 .pytest_cache
+.vscode
+.vscode/
+.vscode/*
+*.code-workspace
