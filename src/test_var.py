@@ -26,3 +26,8 @@ def test_import():
     assert variables
     print('Get variable: [INFO] Success')
     del variables
+
+def test_silentecho():
+    retmsg = stools.silent_echo('Testing with ($tool)', tool='PyTest')
+    assert retmsg == 'Testing with PyTest'
+    assert type(retmsg) is str
