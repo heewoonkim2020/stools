@@ -30,4 +30,4 @@ jobs:
         pip install -r requirements.txt
     - name: Test using PyTest
       run: |
-        pytest ./src/tests/
+        pytest ./src/test_var.py

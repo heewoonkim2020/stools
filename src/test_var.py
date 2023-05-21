@@ -1,5 +1,4 @@
 import stools
-import sys
 from io import StringIO
 from unittest.mock import patch
 
@@ -20,4 +19,10 @@ def test_echo_var():
     tc2 = stream
     del stream
     
-    assert tc1 == tc2
+    assert tc1.read() == tc2.read()
+
+def test_import():
+    from stools import variables
+    assert variables
+    print('Get variable: [INFO] Success')
+    del variables
