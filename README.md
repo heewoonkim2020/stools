@@ -38,5 +38,7 @@ To install sTools and use it in your project, follow the steps below.
     stools.echo('Hello ($NAME)')
     
     stools.echo('A wonderful module, ($mname)!', mname='sTools')
+
+    stools.echo('Thanks for installing, ($username)!', username='John Doe')
     ```
-6. You're done, have fun coding!
+6. You're done with the installation process, good coding!
