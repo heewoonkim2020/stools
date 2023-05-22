@@ -1,3 +1,5 @@
 python-dotenv
 rich
 pytest
+colorama
+colored
