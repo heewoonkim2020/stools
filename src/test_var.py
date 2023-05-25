@@ -29,5 +29,6 @@ def test_import():
 
 def test_silentecho():
     retmsg = stools.silent_echo('Testing with ($tool)', tool='PyTest')
+    print('(variableStatusDebugPartner) <retmsg> = {}'.format(retmsg))
     assert retmsg == 'Testing with PyTest'
     assert type(retmsg) is str
